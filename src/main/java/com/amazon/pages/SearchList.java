@@ -1,6 +1,7 @@
 package com.amazon.pages;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.xml.xpath.XPath;
 
@@ -16,17 +17,18 @@ public class SearchList extends PageObjects {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	@FindBy(xpath="//*[@class=\"a-link-normal a-text-normal\"]")
+	@FindBy(xpath="//h2/a[@class=\"a-link-normal a-text-normal\"]")
 	List<WebElement> searchItems;
 	
 	public boolean validateItemList(String searchItem) {
 		return searchItem.contains(searchItem)? true:false;
 	}
-	
+
 	public ItemDetailsPage selectItem() {
 		searchItems.get(0).click();
-		String newWindow= driver.getWindowHandle();
-		driver.switchTo().window(newWindow);
+		Set<String> newWindow= driver.getWindowHandles();
+		String current=driver.getWindowHandle();
+		for(String s:newWindow)if(s!=current)driver.switchTo().window(s);
 		return new ItemDetailsPage(driver);
 	}
 	
