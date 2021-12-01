@@ -29,7 +29,7 @@ public class Util {
 	public String chromeVersion="96.0.4664.45";
 	public FileReader reader;
 	public  Properties p;
-	protected CartPage cartPage;
+	protected CartPage cartP;
 
 	@BeforeClass
 	public void setDriver() {
@@ -54,8 +54,9 @@ public class Util {
 	}
 	@AfterClass
 	public void tearDown() {
-		cartPage.gotoCart();
-		cartPage.deleteItems();
+		cartP=new CartPage(driver);
+		cartP.gotoCart();
+		cartP.deleteItems();
 		driver.quit();
 	}
 	

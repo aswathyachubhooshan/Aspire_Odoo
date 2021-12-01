@@ -26,7 +26,7 @@ public class CartTest extends Util {
 	SearchList searchList;
 	ItemDetailsPage itemDetail;
 	CartInterPage cartInterPage;
-	
+	CartPage cartPage;
 	@BeforeClass
 	public void loginToSite() {
 		HomePage hm=new HomePage(driver);
