@@ -34,12 +34,11 @@ public class Util {
 	@BeforeClass
 	public void setDriver() {
 		try {
-			reader=new FileReader(System.getProperty("user.dir")+"/equin/src/main/java/com/amazon/resources/resources.properties");
+			reader=new FileReader(System.getProperty("user.dir")+"/src/main/java/com/amazon/resources/resources.properties");
 			p=new Properties();
 			p.load(reader);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
+		System.out.println(p.getProperty("url"));
 		WebDriverManager.chromedriver().driverVersion(chromeVersion).setup();
 		ChromeOptions chrop = new ChromeOptions();
 		String opt[] = new String[] { "-test-type", "test-type=browser", "-disable-default-apps",
@@ -50,6 +49,9 @@ public class Util {
 			//System.setProperty("webdriver.chrome.driver", "G:\\drivers\\chrome\\chromedriver_win32\\chromedriver.exe");
 			this.driver = new ChromeDriver(chrop);
 			driver.get(p.getProperty("url"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 	@AfterClass

@@ -13,7 +13,6 @@ import com.amazon.pages.CartInterPage;
 import com.amazon.pages.CartPage;
 import com.amazon.pages.HomePage;
 import com.amazon.pages.ItemDetailsPage;
-import com.amazon.pages.LoginPage;
 import com.amazon.pages.SearchList;
 import com.amazon.pages.SigninPassword;
 import com.amazon.pages.SigninUsername;
