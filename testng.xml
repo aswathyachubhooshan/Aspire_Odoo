@@ -3,7 +3,7 @@
 <suite name="TestSuite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.amazon.tests.CartTest"/>
+      <class name="com.aspire.tests.AspireBasicTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
